@@ -212,11 +212,22 @@ def _nm_symbols(nm_tool, nm_args, select, files):
     return out
 
 
+def _is_fetched_source(path):
+    """Is this inside FetchContent source rather than generated build output?"""
+    try:
+        parts = path.relative_to(BUILD / "_deps").parts
+    except ValueError:
+        return False
+    return bool(parts) and parts[0].endswith("-src")
+
+
 def provided_by_libs():
     """Symbols already defined by static libraries we link (Aurora, mainly)."""
-    # Every static archive in the build tree: Dawn, SDL3, fmt and the rest come in through Aurora
-    # and define symbols our objects reference.
-    libs = sorted(l for g in ARCHIVE_GLOBS for l in BUILD.rglob(g))
+    # Every generated static archive in the build tree: Dawn, SDL3, fmt and the rest come in through
+    # Aurora and define symbols our objects reference. FetchContent source trees can contain test
+    # fixtures that merely look like archives, including deliberately corrupt LLVM inputs.
+    libs = sorted(l for g in ARCHIVE_GLOBS for l in BUILD.rglob(g)
+                  if not _is_fetched_source(l))
     if not libs:
         return set()
     nm_tool, nm_args, _nm_undef, nm_def = _nm()
@@ -230,7 +241,7 @@ def undefined():
     # Exclude our own previous output: its stubs would otherwise count as definitions and each run
     # would find only the handful of new symbols.
     objs = [str(p) for g in OBJECT_GLOBS for p in BUILD.rglob(g)
-            if not p.name.startswith("stubs_generated.")]
+            if not p.name.startswith("stubs_generated.") and not _is_fetched_source(p)]
     if not objs:
         sys.exit("no objects; run: cmake --build build")
     nm_tool, nm_args, nm_undef, nm_def = _nm()

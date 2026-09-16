@@ -24,8 +24,9 @@ if [ -z "${CMAKE_TOOLCHAIN_FILE:-}" ]; then
 fi
 
 # Hermetic dependencies, and this is the whole of why: Aurora asks find_package for libpng,
-# Freetype, zstd, SQLite3 and abseil before it builds its own, and a CI runner has Homebrew, so it
-# found them and linked them by absolute path.
+# Freetype, zstd, SQLite3, abseil and fmt before it builds its own, and a developer or CI runner can
+# find host packages and link them by absolute path. genstubs also needs static dependency archives
+# so it can distinguish their definitions from symbols the game genuinely has not implemented.
 set -- -S . -B "$BUILD" -G "$GENERATOR" \
     -DCMAKE_BUILD_TYPE="$TYPE" \
     -DSTRIKERS_AURORA=ON \
@@ -35,6 +36,7 @@ set -- -S . -B "$BUILD" -G "$GENERATOR" \
     -DCMAKE_DISABLE_FIND_PACKAGE_zstd=ON \
     -DCMAKE_DISABLE_FIND_PACKAGE_SQLite3=ON \
     -DCMAKE_DISABLE_FIND_PACKAGE_absl=ON \
+    -DCMAKE_DISABLE_FIND_PACKAGE_fmt=ON \
     -DAURORA_CACHE_USE_ZSTD=OFF \
     -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded
 

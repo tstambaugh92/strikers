@@ -172,6 +172,9 @@ else()
     target_compile_options(port_flags INTERFACE
         -fdeclspec
         -fshort-wchar
+        # glibc's wide-character ABI remains 32-bit. Clang 22 otherwise recognizes UTF-16 length
+        # loops as wcslen and replaces them with an incompatible libc call.
+        -fno-builtin-wcslen
         -include "${CMAKE_CURRENT_SOURCE_DIR}/include/port/prelude.h"
         -fno-strict-aliasing
         -fsigned-char
