@@ -98,11 +98,13 @@ struct PlayerStats
     /* 0x1C */ unsigned short mNumGoalsOneTimers;
     /* 0x1E */ unsigned short mNumSTSAttempts;
     /* 0x20 */ unsigned short mNumPerfectPasses;
-    /* 0x24 */ unsigned long mBallPossessionTime;
-    /* 0x28 */ unsigned long mNumButtonPresses;
+    /* 0x24 */ u32 mBallPossessionTime;
+    /* 0x28 */ u32 mNumButtonPresses;
     /* 0x2C */ RECORDTYPE mRecordType;
     /* 0x30 */ eType mType;
 }; // total size: 0x34
+
+static_assert(sizeof(PlayerStats) == 0x34, "PlayerStats must retain its 32-bit game layout");
 
 struct TeamStats
 {
@@ -114,6 +116,8 @@ struct TeamStats
     /* 0xA */ unsigned short mNumPoints;
     /* 0xC */ PlayerStats mPlayerTotalStats;
 }; // total size: 0x40
+
+static_assert(sizeof(TeamStats) == 0x40, "TeamStats must retain its 32-bit game layout");
 
 struct BasicGameInfo;
 

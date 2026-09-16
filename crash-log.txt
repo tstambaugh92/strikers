@@ -1,0 +1,76 @@
+[port] mix:   voice smp_id=717 addr=0x55a5116e81b0 extra=0x55a5115687cc len=12087 loop=0 loopLen=0 type=0 off=0 state=2 pitch=0xb970 pos=347 cur=0x22dd04ed lpf=0 aux=0x005e
+[port] mix: studios=1 voices=15 withSample=15 peakEnv=0x7fff peakVol=0x1c9a busPeak=8549 rawPeak=8552 surPeak=0 auxSend=3255 auxRet=1955 limGain=1.000 mixFrq=32000
+[port] mix:   voice smp_id=657 addr=0x55a511633d00 extra=0x55a511562f28 len=4438 loop=0 loopLen=0 type=0 off=0 state=2 pitch=0xb060 pos=1226 cur=0x22c67f7a lpf=0 aux=0x015a
+[port] dvd: stream open audio/data/streams/heckler dsp files/heckler_pipe_hit_mono_03b.dsp @388010791ms
+[port] mix: studios=1 voices=16 withSample=16 peakEnv=0x7fff peakVol=0x18e8 busPeak=7423 rawPeak=7425 surPeak=0 auxSend=2558 auxRet=1584 limGain=1.000 mixFrq=32000
+[port] mix:   voice smp_id=52 addr=0x55a51193c890 extra=0x55a51155d190 len=59165 loop=0 loopLen=0 type=0 off=0 state=2 pitch=0x8000 pos=400 cur=0x232792ea lpf=0 aux=0x0377
+[stats] games=3
+[port] dvd: stream open audio/data/streams/music dsp files/stad_eog_2_32k.idsp @388014489ms
+[port] mix: studios=1 voices=21 withSample=21 peakEnv=0x7fff peakVol=0x1ade busPeak=11256 rawPeak=11259 surPeak=0 auxSend=3582 auxRet=1980 limGain=1.000 mixFrq=32000
+[port] mix:   voice smp_id=46 addr=0x55a51190e4a0 extra=0x55a51155d0a0 len=48205 loop=0 loopLen=0 type=0 off=0 state=2 pitch=0x8000 pos=160 cur=0x2321c9f8 lpf=0 aux=0x03f2
+[port] mix: studios=1 voices=18 withSample=18 peakEnv=0x7fff peakVol=0x27d8 busPeak=9209 rawPeak=9212 surPeak=0 auxSend=6220 auxRet=3535 limGain=1.000 mixFrq=32000
+[port] mix:   voice smp_id=772 addr=0x55a5119c77e0 extra=0x55a511571bf6 len=103268 loop=0 loopLen=0 type=0 off=0 state=2 pitch=0x10000 pos=12160 cur=0x2339260a lpf=0 aux=0x0c34
+[port] dvd: stream open audio/data/streams/announcer dsp files/ann_wario_high_01.idsp @388017176ms
+[port] mix: studios=1 voices=17 withSample=17 peakEnv=0x7fff peakVol=0x4261 busPeak=11528 rawPeak=11531 surPeak=0 auxSend=5593 auxRet=3159 limGain=1.000 mixFrq=32000
+[port] mix:   voice smp_id=768 addr=0x55a5119a69b0 extra=0x55a511571b56 len=133004 loop=55913 loopLen=60001 type=0 off=0 state=2 pitch=0x10000 pos=4160 cur=0x2334e5f4 lpf=0 aux=0x09a9
+[port] mix: studios=1 voices=11 withSample=11 peakEnv=0x7fff peakVol=0x371f busPeak=4568 rawPeak=4570 surPeak=0 auxSend=4606 auxRet=2643 limGain=1.000 mixFrq=32000
+[port] mix:   voice smp_id=39 addr=0x55a5118adea0 extra=0x55a51155cf88 len=79320 loop=0 loopLen=0 type=0 off=0 state=2 pitch=0x8000 pos=21280 cur=0x23161c42 lpf=0 aux=0x0307
+[match] over score=6-1
+[port] dvd: stream open audio/data/streams/music dsp files/fe_game_over_32k.idsp @388020860ms
+[game] sound: cGameSFX::StopEmitter(): types don't match!
+[fe] return-to-fe
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM freed: 471136
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM freed: 519008
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM freed: 591872
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM freed: 632032
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM used/freed: 0
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM freed: 135488
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM freed: 184256
+[game] sound: Secondary sound stack is now empty.
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM used: 206048
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM used: 241856
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM used: 48608
+[game] sound: Primary sound stack ARAM used/freed: 0
+[game] sound: Secondary sound stack ARAM used: 252736
+[port] dvd: stream open audio/data/streams/music dsp files/fe_cup_battle_32k.idsp @388021977ms
+
+*** strikers: SIGSEGV (bad memory access)
+./strikers(+0x2f0deb) [0x55a5050c3deb]
+/usr/lib/libc.so.6(+0x3e6f0) [0x7f819b63e6f0]
+./strikers(+0x2a287b) [0x55a50507587b]
+./strikers(+0x2a2099) [0x55a505075099]
+./strikers(+0x2d09d9) [0x55a5050a39d9]
+./strikers(+0x2ab6f2) [0x55a50507e6f2]
+/usr/lib/libc.so.6(+0x27781) [0x7f819b627781]
+/usr/lib/libc.so.6(__libc_start_main+0x89) [0x7f819b6278b9]
+./strikers(+0x118c65) [0x55a504eebc65]
+Segmentation fault         (core dumped) ./strikers 2>&1
+[stambtx@segfault Strikers]$
+
+
+
+
+
+Backtrace from GDB:
+[Current thread is 1 (Thread 0x7fec6f30dbc0 (LWP 234914))]
+(gdb) bt
+#0  0x000055ded865887b in TransitionTask::InitializeFEState() ()
+#1  0x000055ded8658099 in TransitionTask::StateTransition(unsigned int, unsigned int) ()
+#2  0x000055ded86869d9 in nlTaskManager::RunAllTasks() ()
+#3  0x000055ded86616f2 in aurora_main ()
+#4  0x00007fec6f027781 in __libc_start_call_main (main=main@entry=0x55ded87ee100 <main>, argc=argc@entry=1, argv=argv@entry=0x7ffd59276698)
+    at ../sysdeps/nptl/libc_start_call_main.h:59
+#5  0x00007fec6f0278b9 in __libc_start_main_impl (main=0x55ded87ee100 <main>, argc=1, argv=0x7ffd59276698, init=<optimized out>,
+    fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffd59276688) at ../csu/libc-start.c:372
+#6  0x000055ded84cec65 in _start ()
+(gdb)
